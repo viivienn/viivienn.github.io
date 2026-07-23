@@ -20,7 +20,7 @@ export default function App() {
               building things that quietly just work.
             </p>
             <p className="mt-3 text-sm text-[#6B6B6B]">San Francisco, CA</p>
-            <nav className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+            <nav aria-label="Primary contact links" className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
               {[
                 { label: "Email", href: "mailto:viivienn@gmail.com" },
                 { label: "LinkedIn", href: "https://linkedin.com/" },
@@ -28,11 +28,11 @@ export default function App() {
                 { label: "Résumé", href: "vivienne-chow-resume.pdf", download: true },
               ].map((l, i) => (
                 <span key={l.label} className="flex items-center gap-4">
-                  {i > 0 && <span className="text-[#C7C7C4]">·</span>}
+                  {i > 0 && <span aria-hidden="true" className="text-[#C7C7C4]">·</span>}
                   <a
                     href={l.href}
                     {...(l.download ? { download: "" } : {})}
-                    className="underline underline-offset-4 decoration-[#1C1C1C]/20 transition-colors hover:decoration-[color:var(--accent)]"
+                    className="rounded-sm underline underline-offset-4 decoration-[#1C1C1C]/20 transition-colors hover:decoration-[color:var(--accent)] focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
                     style={{ ["--accent" as string]: accent }}
                   >
                     {l.label}
@@ -162,7 +162,7 @@ export default function App() {
           <a
             href="vivienne-chow-resume.pdf"
             download
-            className="inline-flex items-center rounded-full border border-[#1C1C1C]/15 px-4 py-2 text-sm transition-colors hover:border-[#C97B5A] hover:text-[#C97B5A]"
+            className="inline-flex items-center rounded-full border border-[#1C1C1C]/15 px-4 py-2 text-sm transition-colors hover:border-[#C97B5A] hover:text-[#C97B5A] focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C97B5A]"
           >
             Download full résumé (PDF)
           </a>
@@ -183,7 +183,7 @@ export default function App() {
           engineering careers. If you're building something interesting,
           hiring, or just want to say hi, reach out.
         </p>
-        <nav className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+        <nav aria-label="Get in touch links" className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
           {[
             { label: "Email", href: "mailto:viivienn@gmail.com" },
             { label: "LinkedIn", href: "https://linkedin.com/" },
@@ -191,11 +191,11 @@ export default function App() {
             { label: "Résumé (PDF)", href: "vivienne-chow-resume.pdf", download: true },
           ].map((l, i) => (
             <span key={l.label} className="flex items-center gap-4">
-              {i > 0 && <span className="text-[#C7C7C4]">·</span>}
+              {i > 0 && <span aria-hidden="true" className="text-[#C7C7C4]">·</span>}
               <a
                 href={l.href}
                 {...("download" in l && (l as { download?: boolean }).download ? { download: "" } : {})}
-                className="underline underline-offset-4 decoration-[#1C1C1C]/20 hover:decoration-[#C97B5A]"
+                className="rounded-sm underline underline-offset-4 decoration-[#1C1C1C]/20 hover:decoration-[#C97B5A] focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C97B5A]"
               >
                 {l.label}
               </a>
