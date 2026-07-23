@@ -111,6 +111,10 @@ export default function App() {
             items="Python · Go · Java · TypeScript · C++ · SQL"
           />
           <SkillRow
+            label="Data structures & algorithms"
+            items="Trees · Graphs · Hash maps · Heaps · Tries · LRU caches · Dynamic programming · Concurrency primitives"
+          />
+          <SkillRow
             label="Systems & infrastructure"
             items="Distributed systems · Kubernetes · gRPC · Microservices · Event-driven architecture · Low-latency serving"
           />
