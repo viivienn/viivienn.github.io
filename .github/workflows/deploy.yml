@@ -24,20 +24,12 @@ jobs:
           bun-version: latest
       - run: bun install --frozen-lockfile
       - name: Build static site
-        env:
-          NITRO_PRESET: github_pages
-        run: bun run vite build --base=/portfolio/
+        run: bun run vite build --base=/me/
       - name: Prepare Pages output
         run: |
-          # Nitro's github_pages preset writes static output to .output/public
-          OUT=.output/public
-          if [ ! -d "$OUT" ]; then
-            # Fallback to Vite's default client dir if the preset changed
-            OUT=dist
-          fi
+          OUT=dist
           touch "$OUT/.nojekyll"
-          # SPA fallback so deep links don't 404
-          cp "$OUT/index.html" "$OUT/404.html" || true
+          cp "$OUT/index.html" "$OUT/404.html"
           echo "PAGES_DIR=$OUT" >> $GITHUB_ENV
       - uses: actions/upload-pages-artifact@v3
         with:
