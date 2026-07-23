@@ -1,0 +1,54 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - name: Build static site
+        env:
+          NITRO_PRESET: github_pages
+        run: bun run vite build --base=/portfolio/
+      - name: Prepare Pages output
+        run: |
+          # Nitro's github_pages preset writes static output to .output/public
+          OUT=.output/public
+          if [ ! -d "$OUT" ]; then
+            # Fallback to Vite's default client dir if the preset changed
+            OUT=dist
+          fi
+          touch "$OUT/.nojekyll"
+          # SPA fallback so deep links don't 404
+          cp "$OUT/index.html" "$OUT/404.html" || true
+          echo "PAGES_DIR=$OUT" >> $GITHUB_ENV
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.PAGES_DIR }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
