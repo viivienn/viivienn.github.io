@@ -86,10 +86,10 @@ function Index() {
         <SectionLabel>What I care about</SectionLabel>
         <div className="mt-4 space-y-3 leading-relaxed">
           <p>
-            <span className="font-medium">What I'm drawn to —</span> building
-            the parts of a system nobody notices until they break: the
-            reliability layer, the safety net, the thing that has to work at
-            3am.
+            <span className="font-medium">What I'm drawn to —</span> high-traffic
+            systems and the latest technology, but also the quieter parts of a
+            system nobody notices until they break — the reliability layer, the
+            safety net, the thing that has to work at 3am.
           </p>
           <p>
             <span className="font-medium">How I try to work —</span> clearly,
@@ -124,10 +124,6 @@ function Index() {
             Earlier in my career, worked on Amazon's product detail pages —
             one of the highest-traffic pages on the internet — improving load
             speed for millions of daily visitors.
-          </li>
-          <li>
-            Mentor early-career engineers, especially women, through
-            Women@Google.
           </li>
         </ul>
 
