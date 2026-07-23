@@ -104,6 +104,30 @@ export default function App() {
           </li>
         </ul>
 
+        <SectionLabel>Skills</SectionLabel>
+        <dl className="mt-4 space-y-3 leading-relaxed text-sm">
+          <SkillRow
+            label="Languages"
+            items="Python · Go · Java · TypeScript · C++ · SQL"
+          />
+          <SkillRow
+            label="Systems & infrastructure"
+            items="Distributed systems · Kubernetes · gRPC · Microservices · Event-driven architecture · Low-latency serving"
+          />
+          <SkillRow
+            label="Cloud & data"
+            items="GCP · AWS · Spanner / BigQuery · Kafka · Terraform · CI/CD"
+          />
+          <SkillRow
+            label="AI & ML"
+            items="LLM serving & safety · RAG · Vector databases · Model evaluation · MLOps"
+          />
+          <SkillRow
+            label="Reliability"
+            items="SRE practices · Observability · Incident response · Performance tuning · System design"
+          />
+        </dl>
+
         <SectionLabel>Experience</SectionLabel>
         <ul className="mt-4 space-y-6">
           <ExperienceItem
@@ -136,18 +160,18 @@ export default function App() {
 
         <SectionLabel>Outside of work</SectionLabel>
         <p className="mt-4 leading-relaxed">
-          Outside of work I play tennis (still working on my forehand), play
-          beach volleyball, and try to make it to a few live music festivals a
-          year. I'm also generally curious about how people think and
-          communicate, which sneaks into how I approach engineering teams too.
+          Outside of work I play tennis (still working on my forehand), beach
+          volleyball, ski in the winter, and surf when I can get to the coast.
+          I try to make it to a few live music festivals a year, and I'm
+          generally curious about how people think and communicate — which
+          sneaks into how I approach engineering teams too.
         </p>
 
         <SectionLabel>Get in touch</SectionLabel>
         <p className="mt-4 leading-relaxed">
           I'm always happy to talk about infrastructure, AI safety, or
-          engineering careers — especially with other women in the field. If
-          you're building something interesting, hiring, or just want to say
-          hi, reach out.
+          engineering careers. If you're building something interesting,
+          hiring, or just want to say hi, reach out.
         </p>
         <nav className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
           {[
