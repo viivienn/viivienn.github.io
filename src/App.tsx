@@ -231,3 +231,12 @@ function ExperienceItem({
     </li>
   );
 }
+
+function SkillRow({ label, items }: { label: string; items: string }) {
+  return (
+    <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
+      <dt className="w-full shrink-0 font-medium sm:w-44">{label}</dt>
+      <dd className="text-[#6B6B6B]">{items}</dd>
+    </div>
+  );
+}
