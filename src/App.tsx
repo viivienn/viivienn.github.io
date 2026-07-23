@@ -116,19 +116,23 @@ export default function App() {
           />
           <SkillRow
             label="Systems & infrastructure"
-            items="Distributed systems · Kubernetes · gRPC · Microservices · Event-driven architecture · Low-latency serving"
+            items="Distributed systems · Multi-region failover · Kubernetes · gRPC · Event-driven architecture · Low-latency serving · Capacity planning"
           />
           <SkillRow
             label="Cloud & data"
             items="GCP · AWS · Spanner / BigQuery · Kafka · Terraform · CI/CD"
           />
           <SkillRow
-            label="AI & ML"
-            items="LLM serving & safety · RAG · Vector databases · Model evaluation · MLOps"
+            label="AI safety & evaluation"
+            items="LLM safety infrastructure · Policy & guardrail systems · Red-teaming · Adversarial testing · Evaluation harnesses & benchmarking · Content moderation pipelines · Responsible AI tooling"
+          />
+          <SkillRow
+            label="AI infrastructure & inference"
+            items="LLM serving at scale · Inference optimization (batching, KV cache, quantization) · GPU/TPU accelerator scheduling · RAG · Vector databases · MLOps · Model rollout & canarying"
           />
           <SkillRow
             label="Reliability"
-            items="SRE practices · Observability · Incident response · Performance tuning · System design"
+            items="SRE practices · SLOs & error budgets · Observability & tracing · Incident response & postmortems · Chaos & load testing · Performance tuning · Large-scale system design"
           />
         </dl>
 
