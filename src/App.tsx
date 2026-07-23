@@ -1,31 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import portrait from "@/assets/vivienne.jpg.asset.json";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Vivienne Chow — Software Engineer" },
-      {
-        name: "description",
-        content:
-          "Vivienne Chow — software engineer at Google working on infrastructure and safety systems, including for Gemini. Based in San Francisco.",
-      },
-      { property: "og:title", content: "Vivienne Chow — Software Engineer" },
-      {
-        property: "og:description",
-        content:
-          "Software engineer at Google working on infrastructure and safety systems for products used by billions of people.",
-      },
-      { property: "og:type", content: "profile" },
-      { name: "twitter:card", content: "summary" },
-    ],
-  }),
-  component: Index,
-});
+import portrait from "@/assets/vivienne.jpg";
 
 const accent = "#C97B5A";
 
-function Index() {
+export default function App() {
   return (
     <main className="min-h-screen bg-[#FAFAF9] font-sans text-[#1C1C1C] antialiased">
       <div className="mx-auto max-w-[720px] px-6 py-16 sm:py-24">
@@ -48,7 +25,7 @@ function Index() {
                 { label: "Email", href: "mailto:viivienn@gmail.com" },
                 { label: "LinkedIn", href: "https://linkedin.com/" },
                 { label: "GitHub", href: "https://github.com/viivienn" },
-                { label: "Résumé", href: "/vivienne-chow-resume.pdf" },
+                { label: "Résumé", href: "vivienne-chow-resume.pdf" },
               ].map((l, i) => (
                 <span key={l.label} className="flex items-center gap-4">
                   {i > 0 && <span className="text-[#C7C7C4]">·</span>}
@@ -64,7 +41,7 @@ function Index() {
             </nav>
           </div>
           <img
-            src={portrait.url}
+            src={portrait}
             alt="Portrait of Vivienne Chow"
             className="h-28 w-28 shrink-0 rounded-2xl object-cover sm:h-32 sm:w-32"
           />
@@ -150,7 +127,7 @@ function Index() {
         </ul>
         <div className="mt-6">
           <a
-            href="/vivienne-chow-resume.pdf"
+            href="vivienne-chow-resume.pdf"
             className="inline-flex items-center rounded-full border border-[#1C1C1C]/15 px-4 py-2 text-sm transition-colors hover:border-[#C97B5A] hover:text-[#C97B5A]"
           >
             Download full résumé (PDF)
