@@ -25,12 +25,13 @@ export default function App() {
                 { label: "Email", href: "mailto:viivienn@gmail.com" },
                 { label: "LinkedIn", href: "https://linkedin.com/" },
                 { label: "GitHub", href: "https://github.com/viivienn" },
-                { label: "Résumé", href: "vivienne-chow-resume.pdf" },
+                { label: "Résumé", href: "vivienne-chow-resume.pdf", download: true },
               ].map((l, i) => (
                 <span key={l.label} className="flex items-center gap-4">
                   {i > 0 && <span className="text-[#C7C7C4]">·</span>}
                   <a
                     href={l.href}
+                    {...(l.download ? { download: "" } : {})}
                     className="underline underline-offset-4 decoration-[#1C1C1C]/20 transition-colors hover:decoration-[color:var(--accent)]"
                     style={{ ["--accent" as string]: accent }}
                   >
@@ -160,6 +161,7 @@ export default function App() {
         <div className="mt-6">
           <a
             href="vivienne-chow-resume.pdf"
+            download
             className="inline-flex items-center rounded-full border border-[#1C1C1C]/15 px-4 py-2 text-sm transition-colors hover:border-[#C97B5A] hover:text-[#C97B5A]"
           >
             Download full résumé (PDF)
@@ -186,11 +188,13 @@ export default function App() {
             { label: "Email", href: "mailto:viivienn@gmail.com" },
             { label: "LinkedIn", href: "https://linkedin.com/" },
             { label: "GitHub", href: "https://github.com/viivienn" },
+            { label: "Résumé (PDF)", href: "vivienne-chow-resume.pdf", download: true },
           ].map((l, i) => (
             <span key={l.label} className="flex items-center gap-4">
               {i > 0 && <span className="text-[#C7C7C4]">·</span>}
               <a
                 href={l.href}
+                {...("download" in l && (l as { download?: boolean }).download ? { download: "" } : {})}
                 className="underline underline-offset-4 decoration-[#1C1C1C]/20 hover:decoration-[#C97B5A]"
               >
                 {l.label}
