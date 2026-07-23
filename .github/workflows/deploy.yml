@@ -24,7 +24,7 @@ jobs:
           bun-version: latest
       - run: bun install --frozen-lockfile
       - name: Build static site
-        run: bun run vite build --base=/me/
+        run: bun run vite build
       - name: Prepare Pages output
         run: |
           OUT=dist
